@@ -84,3 +84,38 @@ puts "large" if large > 12
 square = 4
 square = square**2 while square < 1000
 p square
+
+
+
+
+
+# Blocks
+def call_block
+    puts "Start of method"
+    yield
+    yield
+    puts "End of method"
+end
+
+call_block { puts "Call code blocks..." }
+
+
+def who_says_that
+    yield("Zhenglai", "hello")
+    yield("Junlai", "world")
+end
+
+who_says_that {|person,word| puts "#{person} says #{word}" }
+
+
+# Iteracotrs
+animals = %w(bee fox cat dog)
+animals.each {|animal| puts animal}
+('a'..'z').each {|char| print char }
+4.times {|i| print i}
+
+
+
+print "You give me #{ARGV.length} arguments\n"
+p ARGV
+
